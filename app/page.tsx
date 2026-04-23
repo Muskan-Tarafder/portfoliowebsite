@@ -26,7 +26,7 @@ import {
   Database,
   Wrench,
 } from 'lucide-react'
-
+import { Github, Linkedin } from 'lucide-react'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -502,12 +502,23 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
             {EMAIL}
           </a>
         </p>
-        <div className="flex items-center justify-start space-x-3 ">
-          {SOCIAL_LINKS.map((link) => (
-            <MagneticSocialLink key={link.label} link={link.link}>
-              {link.label}
-            </MagneticSocialLink>
-          ))}
+        <div className="flex items-center justify-start space-x-3">
+          {SOCIAL_LINKS.map((link) => {
+            // 1. Define the logic
+            const isGithub = link.label.toLowerCase().includes('git');
+            const isLinkedin = link.label.toLowerCase().includes('linkedin');
+
+            // 2. Explicitly return the JSX
+            return (
+              <MagneticSocialLink key={link.label} link={link.link}>
+                <span className="flex items-center gap-1.5">
+                  {isGithub && <Github size={14} />}
+                  {isLinkedin && <Linkedin size={14} />}
+                  {link.label}
+                </span>
+              </MagneticSocialLink>
+            );
+          })}
         </div>
       </motion.section>
 

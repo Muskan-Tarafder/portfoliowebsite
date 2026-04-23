@@ -4,6 +4,10 @@ import Link from 'next/link'
 import { MoonIcon, SunIcon, FileText } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { Github, Linkedin } from 'lucide-react'
+import {
+  SOCIAL_LINKS,
+} from './data'
 
 function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
@@ -74,6 +78,31 @@ export function Header() {
           >
             Backend Developer
           </TextEffect>
+          {/* Your Social Box */}
+          <div className="flex items-center gap-2 pt-2">
+  {/* GitHub Box */}
+            <a 
+              href={SOCIAL_LINKS.find(s => s.label.toLowerCase().includes('git'))?.link || '#'} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-200 bg-zinc-50/50 text-zinc-500 transition-all hover:bg-white hover:text-black hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:bg-zinc-800 dark:hover:text-white shadow-sm"
+              aria-label="GitHub"
+            >
+              <Github size={20} />
+            </a>
+
+  {/* LinkedIn Box */}
+            <a 
+              href={SOCIAL_LINKS.find(s => s.label.toLowerCase().includes('linkedin'))?.link || '#'} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-200 bg-zinc-50/50 text-zinc-500 transition-all hover:bg-white hover:text-blue-600 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:bg-zinc-800 dark:hover:text-blue-400 shadow-sm"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
+          
         </div>
 
         <div className="relative group">
