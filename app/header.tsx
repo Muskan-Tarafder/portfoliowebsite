@@ -31,9 +31,10 @@ function ThemeToggle() {
 
 export function Header() {
   return (
-    <header className="mb-20 space-y-10">
+    <header className=" relative mb-20 space-y-10 ">
       {/* Top Navigation Bar */}
-      <nav className="flex items-center justify-between border-b border-zinc-100 pb-4 dark:border-zinc-900">
+      
+      <nav className="flex items-center justify-between border-b border-zinc-100 pb-4 dark:border-zinc-900 ">
         <div className="flex items-center gap-5 text-sm font-medium text-zinc-500 dark:text-zinc-400">
           <Link href="#projects" className="transition-colors hover:text-black dark:hover:text-white">
             Projects
@@ -59,9 +60,9 @@ export function Header() {
       </nav>
 
       {/* Profile Section */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
         <div className="space-y-1">
-          <Link href="/" className="text-2xl font-bold tracking-tight text-black dark:text-white">
+          <Link href="/" className="text-3xl font-bold tracking-tight text-black dark:text-white">
             Muskan Tarafder
           </Link>
           <TextEffect
@@ -77,7 +78,7 @@ export function Header() {
 
         <div className="relative group">
           <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-zinc-200 to-zinc-100 opacity-50 blur-md transition-all group-hover:opacity-100 dark:from-zinc-800 dark:to-zinc-900" />
-          <div className="relative h-35 w-35 overflow-hidden rounded-full border border-zinc-200 dark:border-zinc-800">
+          <div className="relative h-35 w-35 overflow-hidden rounded-full border border-zinc-300 dark:border-zinc-700">
             <img
               src="/images/profilepic.jpg"
               alt="Muskan Tarafder"

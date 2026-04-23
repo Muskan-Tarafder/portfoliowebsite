@@ -19,7 +19,7 @@ import {
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
-
+import { useEffect } from 'react'
 import {
   Code,
   Server,
@@ -108,7 +108,7 @@ function MagneticSocialLink({
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a
         href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-zinc-200 dark:ring-zinc-700 "
       >
         {children}
         <svg
@@ -132,23 +132,71 @@ function MagneticSocialLink({
 }
 
 export default function Personal() {
+
+//   useEffect(() => {
+//   const canvas = document.getElementById('skills-constellation') as HTMLCanvasElement
+//   if (!canvas) return
+//   const ctx = canvas.getContext('2d')!
+  
+//   const resize = () => {
+//     canvas.width = canvas.offsetWidth
+//     canvas.height = canvas.offsetHeight
+//     draw()
+//   }
+
+//   const draw = () => {
+//     if (!ctx) return
+//     ctx.clearRect(0, 0, canvas.width, canvas.height)
+//     const points = Array.from({ length: 20 }, () => ({
+//       x: Math.random() * canvas.width,
+//       y: Math.random() * canvas.height,
+//     }))
+//     points.forEach((p, i) => {
+//       points.forEach((p2, j) => {
+//         if (i >= j) return
+//         const dist = Math.hypot(p.x - p2.x, p.y - p2.y)
+//         if (dist < 150) {
+//           ctx.beginPath()
+//           ctx.moveTo(p.x, p.y)
+//           ctx.lineTo(p2.x, p2.y)
+//           ctx.strokeStyle = '#a1a1aa'
+//           ctx.lineWidth = 0.5
+//           ctx.stroke()
+//         }
+//       })
+//       ctx.beginPath()
+//       ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2)
+//       ctx.fillStyle = '#a1a1aa'
+//       ctx.fill()
+//     })
+//   }
+
+//   resize()
+//   window.addEventListener('resize', resize)
+//   return () => window.removeEventListener('resize', resize)
+// }, [])
   return (
     <motion.main
-      className="space-y-24"
+      className="space-y-16"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
+      
     >
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <div className="flex-1">
+        
+        <div className="flex-1 ">
           <p className="text-zinc-600 dark:text-zinc-400">
 Backend engineer focused on building scalable APIs, efficient backend systems, and integrating machine learning solutions into real-world applications.          </p>
-        </div>
+        
+      </div>
       </motion.section>
-      
+
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-zinc-700" />
+
       <motion.section id="education"
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
@@ -158,7 +206,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
         <div className="space-y-4">
           
           {/* College */}
-          <div className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
             <div className="flex items-start justify-between">
               <div>
                 <h4 className="font-medium text-zinc-900 dark:text-zinc-100">
@@ -178,7 +226,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
           </div>
 
           {/* Class 12 */}
-          <div className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
             <div className="flex items-start justify-between">
               <div>
                 <h4 className="font-medium text-zinc-900 dark:text-zinc-100">
@@ -195,7 +243,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
           </div>
 
           {/* Class 10 */}
-          <div className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
             <div className="flex items-start justify-between">
               <div>
                 <h4 className="font-medium text-zinc-900 dark:text-zinc-100">
@@ -214,153 +262,157 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
         </div>
       </motion.section>
 
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-zinc-700" />
 
+      <motion.section id="skills"
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        {/* <canvas id="skills-constellation" className="absolute inset-0 w-full h-full -z-10 opacity-10 dark:opacity-20" /> */}
+  
+        <h3 className="mb-5 text-lg font-medium">Skills</h3>
 
-<motion.section id="skills"
-  variants={VARIANTS_SECTION}
-  transition={TRANSITION_SECTION}
->
-  <h3 className="mb-5 text-lg font-medium">Skills</h3>
+        <div className="space-y-4">
 
-  <div className="space-y-4">
+          {/* Frontend */}
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
+            <div className="mb-2 flex items-center gap-2">
+              <Code className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
+              <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Frontend
+              </h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['React', 'Next.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Tailwind'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-700 ring-1 ring-zinc-200 dark:ring-zinc-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
 
-    {/* Frontend */}
-    <div className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-      <div className="mb-2 flex items-center gap-2">
-        <Code className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
-        <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Frontend
-        </h4>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {['React', 'Next.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Tailwind'].map((skill) => (
-          <span
-            key={skill}
-            className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </div>
+          {/* Backend */}
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
+            <div className="mb-2 flex items-center gap-2">
+              <Server className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
+              <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Backend
+              </h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['Django', 'Flask', 'Node.js', 'REST APIs'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-700 ring-1 ring-zinc-200 dark:ring-zinc-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
 
-    {/* Backend */}
-    <div className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-      <div className="mb-2 flex items-center gap-2">
-        <Server className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
-        <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Backend
-        </h4>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {['Django', 'Flask', 'Node.js', 'REST APIs'].map((skill) => (
-          <span
-            key={skill}
-            className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </div>
+          {/* Databases */}
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
+            <div className="mb-2 flex items-center gap-2">
+              <Database className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
+              <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Databases
+              </h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['MongoDB', 'MySQL', 'PostgreSQL'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-zinc-200 dark:ring-zinc-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
 
-    {/* Databases */}
-    <div className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-      <div className="mb-2 flex items-center gap-2">
-        <Database className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
-        <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Databases
-        </h4>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {['MongoDB', 'MySQL', 'PostgreSQL'].map((skill) => (
-          <span
-            key={skill}
-            className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </div>
+          {/* Tools */}
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
+            <div className="mb-2 flex items-center gap-2">
+              <Wrench className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
+              <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Tools & Others
+              </h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['Git', 'GitHub', 'Docker', 'AWS', 'Postman'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-zinc-200 dark:ring-zinc-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
 
-    {/* Tools */}
-    <div className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-      <div className="mb-2 flex items-center gap-2">
-        <Wrench className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
-        <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-          Tools & Others
-        </h4>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {['Git', 'GitHub', 'Docker', 'AWS', 'Postman'].map((skill) => (
-          <span
-            key={skill}
-            className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </div>
+        </div>
+      </motion.section>
 
-  </div>
-</motion.section>
-
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-zinc-700" />
 
       <motion.section id="projects"
-  variants={VARIANTS_SECTION}
-  transition={TRANSITION_SECTION}
->
-  <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
 
-  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-    {PROJECTS.map((project) => (
-      <div key={project.id} className="space-y-3">
-        
-        {/* Project Image */}
-        <div className="relative overflow-hidden rounded-2xl p-1 ring-1 ring-zinc-300 ring-inset dark:ring-zinc-700">
-          <img
-            src={project.image}
-            alt={project.name}
-            className="h-48 w-full rounded-xl object-cover transition-transform duration-300 hover:scale-105"
-          />
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {PROJECTS.map((project) => (
+            <div key={project.id} className="space-y-3 ">
+              
+              {/* Project Image */}
+              <div className="relative overflow-hidden rounded-2xl p-1 ring-1 ring-zinc-300 ring-inset dark:ring-zinc-700">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="h-48 w-full rounded-xl object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+
+              {/* Project Info */}
+              <div className="px-1">
+                <a
+                  className="group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.name}
+                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-zinc-50"></span>
+                </a>
+
+                <p className="text-base text-zinc-600 dark:text-zinc-400">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-md bg-zinc-100 px-2 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          ))}
         </div>
+      </motion.section>
 
-        {/* Project Info */}
-        <div className="px-1">
-          <a
-            className="group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {project.name}
-            <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-zinc-50"></span>
-          </a>
-
-          <p className="text-base text-zinc-600 dark:text-zinc-400">
-            {project.description}
-          </p>
-
-          {/* Tech Stack */}
-          <div className="mt-2 flex flex-wrap gap-2">
-            {project.tech.map((t) => (
-              <span
-                key={t}
-                className="rounded-md bg-zinc-100 px-2 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
-
-      </div>
-    ))}
-  </div>
-</motion.section>
-
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-zinc-700" />
       
 
       {/* {<motion.section
@@ -450,7 +502,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
             {EMAIL}
           </a>
         </p>
-        <div className="flex items-center justify-start space-x-3">
+        <div className="flex items-center justify-start space-x-3 ">
           {SOCIAL_LINKS.map((link) => (
             <MagneticSocialLink key={link.label} link={link.link}>
               {link.label}
@@ -458,6 +510,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
           ))}
         </div>
       </motion.section>
+
     </motion.main>
   )
 }
