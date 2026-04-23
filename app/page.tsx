@@ -216,7 +216,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
                   Dayananda Sagar College of Engineering, Bangalore
                 </p>
                 <p className="text-sm text-zinc-500 dark:text-zinc-500">
-                  CGPA: 9.85 / 10
+                  CGPA: 9.85 / 10 (Sem V)
                 </p>
               </div>
               <span className="text-sm text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
