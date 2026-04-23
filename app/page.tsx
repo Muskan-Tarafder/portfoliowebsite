@@ -319,7 +319,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
       <div key={project.id} className="space-y-3">
         
         {/* Project Image */}
-        <div className="relative overflow-hidden rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+        <div className="relative overflow-hidden rounded-2xl p-1 ring-1 ring-zinc-300 ring-inset dark:ring-zinc-700">
           <img
             src={project.image}
             alt={project.name}
