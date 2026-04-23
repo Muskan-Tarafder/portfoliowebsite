@@ -145,8 +145,7 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Backend engineer building scalable APIs and ML-powered systems.
-          </p>
+Backend engineer focused on building scalable APIs, efficient backend systems, and integrating machine learning solutions into real-world applications.          </p>
         </div>
       </motion.section>
       

@@ -77,7 +77,7 @@ export function Header() {
 
         <div className="relative group">
           <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-zinc-200 to-zinc-100 opacity-50 blur-md transition-all group-hover:opacity-100 dark:from-zinc-800 dark:to-zinc-900" />
-          <div className="relative h-20 w-20 overflow-hidden rounded-full border border-zinc-200 dark:border-zinc-800">
+          <div className="relative h-35 w-35 overflow-hidden rounded-full border border-zinc-200 dark:border-zinc-800">
             <img
               src="/images/profilepic.jpg"
               alt="Muskan Tarafder"
