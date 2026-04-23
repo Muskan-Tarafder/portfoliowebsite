@@ -50,7 +50,7 @@ export function Header() {
             Education
           </Link>
           <a
-            href="https://drive.google.com/file/d/15AW8tq5vzYfQuPDvz2z7SQ9hDgHYfNtj/view"
+            href="https://drive.google.com/file/d/1A3GM21RXfqdsqbS1tePNZrG8ONjwStu-/view"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 transition-colors hover:text-black dark:hover:text-white"
