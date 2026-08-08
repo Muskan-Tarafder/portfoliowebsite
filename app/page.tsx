@@ -437,6 +437,36 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
 
       <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-zinc-700" />
 
+      {<motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
+        <div className="space-y-4">
+          {WORK_EXPERIENCE.map((job, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300"
+            >
+              <div className="flex items-start justify-between">
+                <div>
+                  <h4 className="font-medium text-zinc-900 dark:text-zinc-100">
+                    {job.title}
+                  </h4>
+                  <p className="text-zinc-600 dark:text-zinc-400">
+                    {job.company}
+                  </p>
+                </div>
+                <span className="text-sm text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
+                  {job.start} - {job.end}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.section>}
+
+      
       <motion.section id="projects"
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
@@ -493,34 +523,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
       <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-zinc-700" />
       
 
-      {<motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
-        <div className="space-y-4">
-          {WORK_EXPERIENCE.map((job, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300"
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <h4 className="font-medium text-zinc-900 dark:text-zinc-100">
-                    {job.title}
-                  </h4>
-                  <p className="text-zinc-600 dark:text-zinc-400">
-                    {job.company}
-                  </p>
-                </div>
-                <span className="text-sm text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
-                  {job.start} - {job.end}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.section>}
+      
 
 {/*
 <motion.section
