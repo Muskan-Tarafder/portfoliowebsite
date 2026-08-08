@@ -12,8 +12,6 @@ type WorkExperience = {
   title: string
   start: string
   end: string
-  link: string
-  id: string
 }
 
 // type BlogPost = {
@@ -32,13 +30,22 @@ type SocialLink = {
 
 export const PROJECTS = [
   {
+    name: 'GrooveQ',
+    description:
+      'A music room platform where friends can hang out, chat, and control a shared Spotify queue.',
+    link: 'https://github.com/Muskan-Tarafder/grooveQ',
+    image: 'https://opengraph.githubassets.com/1/Muskan-Tarafder/grooveQ',
+    tech: ['Django', 'Django REST Framework', 'React', 'GroqAI API', 'PostgreSQL'],
+    id: 'project1',
+  },
+  {
     name: 'Financial Data Processing',
     description:
       'Transaction management with RBAC, ORM optimization, and real-time aggregation.',
     link: 'https://github.com/Muskan-Tarafder/Finance_Backend_Assignment',
     image: 'https://opengraph.githubassets.com/1/Muskan-Tarafder/Finance_Backend_Assignment',
     tech: ['Django', 'Django REST Framework', 'PostgreSQL', 'RBAC'],
-    id: 'project1',
+    id: 'project2',
   },
   {
     name: 'ATS Integration Middleware',
@@ -47,7 +54,7 @@ export const PROJECTS = [
     link: 'https://github.com/Muskan-Tarafder/ATS-Integration',
     image: '/images/ATS.png',
     tech: ['Django', 'OData v2', 'SAP SuccessFactors', 'Serverless'],
-    id: 'project2',
+    id: 'project3',
   },
   {
     name: 'Hospital Management System',
@@ -56,7 +63,7 @@ export const PROJECTS = [
     link: 'https://github.com/Muskan-Tarafder/ATS-Integration', // update if needed
     image: '/images/HMS.png',
     tech: ['AWS Lambda', 'Django', 'PostgreSQL', 'Async', 'RBAC'],
-    id: 'project3',
+    id: 'project4',
   },
   {
     name: 'Library Management System',
@@ -65,7 +72,7 @@ export const PROJECTS = [
     link: 'https://github.com/Muskan-Tarafder/Library-Management',
     image: './images/LMS.png',
     tech: ['Flask', 'MySQL', 'REST API'],
-    id: 'project4',
+    id: 'project5',
   },
   {
     name: 'ProseAndMelody',
@@ -74,7 +81,7 @@ export const PROJECTS = [
     link: 'https://proseandmelody.onrender.com',
     image: '/images/PandM.jpg',
     tech: ['Flask', 'MongoDB', 'Spotify API', 'OpenLibrary API', 'SVD'],
-    id: 'project5',
+    id: 'project6',
   },
   {
     name: 'Customer Churn Prediction',
@@ -83,36 +90,19 @@ export const PROJECTS = [
     link: 'https://github.com/Muskan-Tarafder/ChurnPrediction',
     image: 'https://opengraph.githubassets.com/1/Muskan-Tarafder/ChurnPrediction',
     tech: ['scikit-learn', 'Pandas', 'MySQL'],
-    id: 'project6',
+    id: 'project7',
   }
 ];
 
-// export const WORK_EXPERIENCE: WorkExperience[] = [
-//   {
-//     company: 'Reglazed Studio',
-//     title: 'CEO',
-//     start: '2024',
-//     end: 'Present',
-//     link: 'https://ibelick.com',
-//     id: 'work1',
-//   },
-//   {
-//     company: 'Freelance',
-//     title: 'Design Engineer',
-//     start: '2022',
-//     end: '2024',
-//     link: 'https://ibelick.com',
-//     id: 'work2',
-//   },
-//   {
-//     company: 'Freelance',
-//     title: 'Front-end Developer',
-//     start: '2017',
-//     end: 'Present',
-//     link: 'https://ibelick.com',
-//     id: 'work3',
-//   },
-// ]
+export const WORK_EXPERIENCE: WorkExperience[] = [
+  {
+    company: 'Banao Technologies: a subsidary of ATGWorld Network Pvt Ltd.',
+    title: 'Python Backend Developer Intern',
+    start: 'Jan 2026',
+    end: 'Jul 2026',
+  },
+  
+]
 
 // export const BLOG_POSTS: BlogPost[] = [
 //   {

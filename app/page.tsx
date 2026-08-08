@@ -14,7 +14,7 @@ import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
   PROJECTS,
-  // WORK_EXPERIENCE,
+  WORK_EXPERIENCE,
   // BLOG_POSTS,
   EMAIL,
   SOCIAL_LINKS,
@@ -216,7 +216,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
                   Dayananda Sagar College of Engineering, Bangalore
                 </p>
                 <p className="text-sm text-zinc-500 dark:text-zinc-500">
-                  CGPA: 9.85 / 10 (Sem V)
+                  CGPA: 9.71 / 10 (Sem VI)
                 </p>
               </div>
               <span className="text-sm text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
@@ -268,11 +268,29 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        {/* <canvas id="skills-constellation" className="absolute inset-0 w-full h-full -z-10 opacity-10 dark:opacity-20" /> */}
-  
         <h3 className="mb-5 text-lg font-medium">Skills</h3>
 
         <div className="space-y-4">
+
+          {/* Languages */}
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
+            <div className="mb-2 flex items-center gap-2">
+              <Code className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
+              <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Languages
+              </h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['Python', 'C++', 'C', 'SQL'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-700 ring-1 ring-zinc-200 dark:ring-zinc-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
 
           {/* Frontend */}
           <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
@@ -323,7 +341,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
               </h4>
             </div>
             <div className="flex flex-wrap gap-2">
-              {['MongoDB', 'MySQL', 'PostgreSQL'].map((skill) => (
+              {['MongoDB (Atlas, Compass)', 'MySQL', 'PostgreSQL'].map((skill) => (
                 <span
                   key={skill}
                   className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-zinc-200 dark:ring-zinc-700"
@@ -334,7 +352,67 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
             </div>
           </div>
 
-          {/* Tools */}
+          {/* Data Science & ML */}
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
+            <div className="mb-2 flex items-center gap-2">
+              <Database className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
+              <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Data Science & ML
+              </h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['scikit-learn', 'NumPy', 'Pandas', 'Feature Engineering', 'SVD'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-zinc-200 dark:ring-zinc-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Web Technologies */}
+          {/* <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
+            <div className="mb-2 flex items-center gap-2">
+              <Code className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
+              <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Web Technologies
+              </h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['JSON', 'JWT Authentication', 'CORS'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-zinc-200 dark:ring-zinc-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div> */}
+
+          {/* APIs
+          <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
+            <div className="mb-2 flex items-center gap-2">
+              <Server className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
+              <h4 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                APIs
+              </h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['Spotify API', 'OpenLibrary API', 'Goodreads API', 'YouTube Music API (ytmusicapi)', 'SAP SuccessFactors (OData v2)'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-zinc-200 dark:ring-zinc-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div> */}
+
+          {/* Tools & Others */}
           <div className=" rounded-2xl border shadow-sm border-zinc-200 p-4 dark:border-zinc-800 hover:shadow-[0_0_20px_2px_rgba(161,161,170,0.25)] transition-shadow duration-300">
             <div className="mb-2 flex items-center gap-2">
               <Wrench className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
@@ -343,7 +421,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
               </h4>
             </div>
             <div className="flex flex-wrap gap-2">
-              {['Git', 'GitHub', 'Docker', 'AWS', 'Postman'].map((skill) => (
+              {['Git', 'GitHub', 'Docker', 'AWS', 'Postman', 'Render', 'Vercel'].map((skill) => (
                 <span
                   key={skill}
                   className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 ring-1 ring-zinc-200 dark:ring-zinc-700"
@@ -415,19 +493,16 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
       <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-zinc-700" />
       
 
-      {/* {<motion.section
+      {<motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
         <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
-          {WORK_EXPERIENCE.map((job) => (
+          {WORK_EXPERIENCE.map((job,idx) => (
             <a
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={job.id}
+              key={idx}
             >
               <Spotlight
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
@@ -451,7 +526,7 @@ Backend engineer focused on building scalable APIs, efficient backend systems, a
             </a>
           ))}
         </div>
-      </motion.section>} */}
+      </motion.section>}
 
 {/*
 <motion.section
